@@ -1,0 +1,77 @@
+#espacio{
+    height: 130px;
+}
+#contenedor{
+    display:flex;
+    justify-content: space-around;
+    width: auto;
+}
+#rojo{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    padding: 10px;
+    border: 5px;
+    border-style:solid;
+    border-color:  black;
+    /* display: inline; */
+}
+
+#azul{
+    width: 200px;
+    height: 200px;
+    background-color:blue;
+    padding: 10px; 
+    border: 5px;
+    border-style:solid;
+    border-color:  black;   
+    /* display: inline; */
+}
+
+#verde{
+    width: 200px;
+    height: 200px;
+    background-color:green;
+    padding: 10px;
+    border: 5px;
+    border-style:solid;
+    border-color:  black;
+    /* display: inline; */
+}
+p{
+    text-align: center;
+}
+#boxp{
+    padding-top: 50px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items:flex-start;
+    justify-content:space-evenly;
+    width: auto;
+}
+
+#box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+#lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+#mensajeap{
+    border-color: black;
+    border-style: solid;
+}
+#mensaje{
+    border-color: black;
+    border-style: solid;
+}
+
