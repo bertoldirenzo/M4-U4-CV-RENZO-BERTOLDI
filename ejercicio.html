@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ejercicio.css">
+</head>
+
+<body id="body">
+    <div id="espacio"></div>
+    <div id="contenedor">
+        <div id="rojo">
+
+        </div>
+
+        <div id="azul">
+
+        </div>
+
+        <div id="verde">
+
+        </div>
+    </div>
+
+    <p>Haga click en el cuadrado con el color de fondo deseado</p>
+    <div id="boxp">
+        <div id="box">
+            <textarea rows="3" maxlength="100" id="mensaje"></textarea>
+            <div id="contador">0/100</div>
+        </div>
+        <div id="lista">
+            <textarea rows="5" cols="34" maxlength="500" id="mensajeap">100/100</textarea>
+            <p></p>
+            <button id="listaaprobados">
+                Aprobados
+            </button>
+        </div>
+        
+    </div>
+
+    <script>
+        rojo.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'red';
+            document.getElementById("mensajeap").style.backgroundColor = 'red';
+            document.getElementById("mensaje").style.backgroundColor = 'red';
+            document.getElementById("listaaprobados").style.backgroundColor = 'red';
+        });
+
+        azul.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'blue';
+            document.getElementById("mensajeap").style.backgroundColor = 'blue';
+            document.getElementById("mensaje").style.backgroundColor = 'blue';
+            document.getElementById("listaaprobados").style.backgroundColor = 'blue';
+        });
+
+        verde.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'green';
+            document.getElementById("mensajeap").style.backgroundColor = 'green';
+            document.getElementById("mensaje").style.backgroundColor = 'green';
+            document.getElementById("listaaprobados").style.backgroundColor = 'green';
+        });
+        /* ---------------------------------------------------- */
+        var mensaje = document.getElementById('mensaje');
+        var contador = document.getElementById('contador');
+
+        mensaje.addEventListener('input', function (e) {
+            const target = e.target;
+            var longitudMax = target.getAttribute('maxlength');
+            var longitudAct = target.value.length;
+            contador.innerHTML = `${longitudAct}/${longitudMax}`;
+        });
+        /* ------------------------------------------------------- */
+        var alumnos = [
+
+            {
+
+                nombre: 'Juan Gomez',
+
+                nota: 7,
+
+            }, {
+
+                nombre: 'Pedro Rodriguez',
+
+                nota: 4,
+
+            }, {
+
+                nombre: 'Roxana García',
+
+                nota: 8,
+
+            }, {
+
+                nombre: 'Luciano Lopez',
+
+                nota: 5,
+
+            }, {
+
+                nombre: 'Fernanda Gimenez',
+
+                nota: 6,
+
+            }, {
+
+                nombre: 'Florencia Martinez',
+
+                nota: 10,
+
+            }, {
+
+                nombre: 'Raul Sanchez',
+
+                nota: 7,
+
+            }, {
+
+                nombre: 'Sandra Figueroa',
+
+                nota: 8,
+
+            }
+
+        ];
+
+        listaaprobados.addEventListener('click', function () {
+            document.getElementById("mensajeap").value = '';
+            aprobados = alumnos.filter(num => num.nota >= 7);
+            for (i = 0; i < aprobados.length; i++) {
+                document.getElementById("mensajeap").value += aprobados[i].nombre + ' aprobó con un ' + aprobados[i].nota + '. ' + "\n";
+            }
+        });
+
+        window.addEventListener('load', function () {
+            document.getElementById("mensajeap").value = '';
+            document.getElementById("mensaje").value = '';
+        }
+        )
+
+    </script>
+</body>
+
+</html>
